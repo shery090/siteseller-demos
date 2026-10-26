@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>La Rosita Y Taqueria|Tacos, fresh tortillas and panaderia, all in one spot</title>
+<meta name="description" content="La Rosita Y Taqueria - Tacos, fresh tortillas and panaderia, all in one spot. Houston, TX, USA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#c0392b;--accent:#e67e22;--ink:#0f0908;--bg:#faf3ec;--surface:#ffffff;--line:rgba(16,16,32,.09);--shadow:0 10px 30px rgba(16,16,32,.10)}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header.hero{position:relative;background:radial-gradient(1200px 500px at 85% -10%,var(--accent)55,transparent),radial-gradient(900px 500px at -10% 110%,var(--primary)44,transparent),linear-gradient(160deg,var(--ink),var(--ink) 60%,#000 100%);color:#fff;overflow:hidden}
+header.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.5px);background-size:26px 26px;pointer-events:none}
+.hero-inner{position:relative;z-index:2;display:grid;gap:32px;padding:96px 0 88px;grid-template-columns:1.15fr .85fr;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;padding:7px 14px;border-radius:999px;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(38px,6vw,64px);margin:20px 0 16px;font-weight:700}
+.hero p.sub{font-size:19px;max-width:52ch;color:rgba(255,255,255,.88)}
+.cta-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:12px;font-weight:600;font-size:16px;transition:transform .15s ease,box-shadow .15s ease;border:0;cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;box-shadow:0 12px 28px rgba(0,0,0,.35)}
+.btn.ghost{background:rgba(255,255,255,.10);color:#fff;border:1px solid rgba(255,255,255,.35)}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:20px;padding:28px;display:none}
+.hero-card img{border-radius:14px;aspect-ratio:4/3;object-fit:cover}
+.hero-facts{display:grid;gap:14px}
+.fact{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:14px 16px;border-radius:14px}
+.fact svg{flex:none;color:var(--accent)}
+.fact b{display:block;font-size:15px}
+.fact span{font-size:13.5px;color:rgba(255,255,255,.75)}
+nav.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;display:flex;align-items:center;gap:10px}
+.brand-dot{width:12px;height:12px;border-radius:4px;background:linear-gradient(135deg,var(--primary),var(--accent))}
+nav.top a.link{font-weight:500;font-size:15px;color:#555}
+nav.top a.link:hover{color:var(--primary)}
+nav .links{display:flex;gap:26px;align-items:center}
+nav .links.call{display:none}
+section{padding:84px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+.sec-head .eyebrow{color:var(--primary);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.sec-head h2{font-size:clamp(28px,4vw,40px);margin:10px 0 12px}
+.sec-head p{color:#667}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.card .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;margin-bottom:16px}
+.card h3{font-size:19px;margin-bottom:8px;font-family:'Inter',sans-serif}
+.card p{font-size:15px;color:#667}
+.about-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.about-art{aspect-ratio:1; border-radius:24px;background:linear-gradient(135deg,var(--primary),var(--accent));position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;color:#fff}
+.about-art::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.14) 1.5px,transparent 2px);background-size:28px 28px}
+.about-art svg{position:relative;z-index:2;opacity:.92}
+.about-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gal .tile{aspect-ratio:1;border-radius:16px;overflow:hidden;position:relative;background:linear-gradient(140deg,var(--primary),var(--ink))}
+.gal .tile img{width:100%;height:100%;object-fit:cover}
+.gal .tile .ph{position:absolute;inset:0;display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:13.5px;letter-spacing:.04em}
+.tst{background:var(--ink);color:#fff}
+.tst .sec-head p{color:rgba(255,255,255,.66)}
+.tst .card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);box-shadow:none}
+.tst .card p{color:rgba(255,255,255,.82)}
+.tst .who{display:flex;align-items:center;gap:12px;margin-top:16px}
+.tst .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;font-weight:700}
+.tst .stars{display:flex;gap:2px;margin-top:6px}
+.contact{background:linear-gradient(180deg,transparent,var(--bg))}
+form.quote{display:grid;gap:14px;max-width:560px;margin:0 auto}
+form.quote input,form.quote textarea{padding:14px 16px;border-radius:12px;border:1px solid var(--line);font:inherit;background:#fff}
+form.quote .btn{justify-content:center}
+footer{background:var(--ink);color:rgba(255,255,255,.78);padding:56px 0 32px}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px;margin-bottom:36px}
+footer h4{color:#fff;font-size:15px;margin-bottom:14px;font-family:'Inter',sans-serif}
+footer .f-item{display:flex;gap:10px;margin-bottom:10px;font-size:14.5px;align-items:flex-start}
+footer .f-item svg{flex:none;margin-top:3px;color:var(--accent)}
+.copy{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;font-size:13px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 12px 30px rgba(37,211,102,.45);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+.demo-ribbon{position:fixed;left:0;top:0;z-index:70;background:var(--ink);color:#fff;font-size:12px;padding:6px 14px;border-bottom-right-radius:10px;opacity:.92}
+@media(max-width:880px){.hero-inner{grid-template-columns:1fr;padding-top:72px}.hero-facts{display:none}.grid3,.gal{grid-template-columns:repeat(2,1fr)}.about-split{grid-template-columns:1fr}footer .cols{grid-template-columns:1fr}nav .links{display:none}nav .links.call{display:flex}}
+@media(max-width:560px){.grid3,.gal{grid-template-columns:1fr}section{padding:64px 0}}
+</style>
+</head>
+<body>
+<div class="demo-ribbon">Demo website preview built for La Rosita Y Taqueria</div>
+<nav class="top"><div class="wrap">
+<a class="brand" href="#"><span class="brand-dot"></span>La Rosita Y Taqueria</a>
+<div class="links">
+<a class="link" href="#services">Services</a>
+<a class="link" href="#gallery">Gallery</a>
+<a class="link" href="#reviews">Reviews</a>
+<a class="link" href="#contact">Contact</a>
+<a class="btn primary" style="padding:10px 18px" href="https://wa.me/17134856313?text=Hi%20La%20Rosita%20Y%20Taqueria%21%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20know%20more.">WhatsApp us</a>
+</div>
+</div></nav>
+<header class="hero"><div class="wrap hero-inner">
+<div>
+<span class="kicker">Houston, TX, USA</span>
+<h1>La Rosita Y Taqueria</h1>
+<p class="sub">Tacos, fresh tortillas and panaderia, all in one spot</p>
+<div class="cta-row">
+<a class="btn primary" href="https://wa.me/17134856313?text=Hi%20La%20Rosita%20Y%20Taqueria%21%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20know%20more." target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L19.7 10.7 13.9 12.6 12 18.4 10.1 12.6 4.3 10.7 10.1 8.8z"/></svg> Message us on WhatsApp</a><a class="btn ghost" href="tel:7134856313"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (713) 485-6313</a>
+</div>
+</div>
+<div class="hero-facts"><div class="fact"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><b>Call us directly</b><span>(713) 485-6313</span></div></div><div class="fact"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L19.7 10.7 13.9 12.6 12 18.4 10.1 12.6 4.3 10.7 10.1 8.8z"/></svg><div><b>WhatsApp</b><span>Message us anytime, we reply fast</span></div></div><div class="fact"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Find us</b><span>1717 Sheffield Blvd, Houston, TX 77015</span></div></div></div>
+</div></header>
+<section id="about"><div class="wrap about-split">
+<div class="about-art"><svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span></span></div>
+<div>
+<div class="sec-head" style="text-align:left;margin:0 0 18px">
+<div class="eyebrow">About us</div>
+<h2>The real story of your business</h2>
+</div>
+<p style="color:#556">La Rosita Y Taqueria is east Houston&#x27;s one-stop shop - a taqueria, tortilleria, bakery and more, rated 4.6 stars across 120+ Google reviews.</p>
+<p style="color:#556;margin-top:12px">This page was built as a free demo to show you what your customers could see when they search for you online.</p>
+</div>
+</div></section>
+<section id="services"><div class="wrap">
+<div class="sec-head"><div class="eyebrow">What we offer</div><h2>Our services</h2><p>Everything customers need to know, at a glance.</p></div>
+<div class="grid3"><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>Signature Dishes</h3><p>Your most-loved plates, front and centre</p></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Easy Ordering</h3><p>Call ahead or reserve a table in seconds</p></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>Family Seating</h3><p>Comfortable space for families and groups</p></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg></div><h3>Event Catering</h3><p>Buffets, dawats and office lunches</p></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div><h3>Fresh Daily</h3><p>Ingredients sourced fresh every morning</p></div><div class="card"><div class="ic"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><h3>Fast Delivery</h3><p>Hot food, delivered across the city</p></div></div>
+</div></section>
+<section id="gallery"><div class="wrap">
+<div class="sec-head"><div class="eyebrow">Gallery</div><h2>See us for yourself</h2><p>Photos of your work, your food, your space - shown here.</p></div>
+<div class="gal"><div class="tile"><div class="ph"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span>Real photos of your business go here</span></div></div><div class="tile"><div class="ph"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Real photos of your business go here</span></div></div><div class="tile"><div class="ph"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l8.84 8.84 8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Real photos of your business go here</span></div></div></div>
+</div></section>
+<section id="reviews" class="tst"><div class="wrap">
+<div class="sec-head"><div class="eyebrow" style="color:var(--accent)">Reviews</div><h2 style="color:#fff">What customers say</h2><p>Rated and reviewed by real customers.</p></div>
+<div class="grid3"><div class="card"><div class="stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p style="margin-top:12px"><b>Your 5-star reviews appear here</b><br><span style="opacity:.75">Real reviews from your Google page build instant trust with new customers.</span></p></div><div class="card"><div class="stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p style="margin-top:12px"><b>Customers see you&#x27;re established</b><br><span style="opacity:.75">Show how many people already recommend you.</span></p></div><div class="card"><div class="stars"><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg width="18" height="18" viewBox="0 0 24 24" fill="#f5b301"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><p style="margin-top:12px"><b>One tap to call you</b><br><span style="opacity:.75">Every section makes it easy to become your next customer.</span></p></div></div>
+</div></section>
+<section id="contact" class="contact"><div class="wrap">
+<div class="sec-head"><div class="eyebrow">Get in touch</div><h2>Book, order or ask anything</h2><p>The fastest way to reach us - call, message, or send a quick note.</p></div>
+<div class="cta-row" style="justify-content:center"><a class="btn primary" href="https://wa.me/17134856313?text=Hi%20La%20Rosita%20Y%20Taqueria%21%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20know%20more." target="_blank">Message on WhatsApp</a><a class="btn primary" href="tel:7134856313">Call (713) 485-6313</a></div>
+<form class="quote" style="margin-top:34px" onsubmit="return handleForm(event)">
+<input required placeholder="Your name">
+<input type="tel" required placeholder="Your phone number">
+<textarea rows="4" placeholder="What do you need? (booking, order, price...)"></textarea>
+<button class="btn primary" type="submit">Send on WhatsApp</button>
+</form>
+</div></section>
+<footer><div class="wrap">
+<div class="cols">
+<div>
+<h4>La Rosita Y Taqueria</h4>
+<p style="font-size:14.5px;max-width:38ch">Tacos, fresh tortillas and panaderia, all in one spot. 1717 Sheffield Blvd, Houston, TX 77015</p>
+</div>
+<div>
+<h4>Visit</h4>
+<div class="f-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>1717 Sheffield Blvd, Houston, TX 77015</div>
+<div class="f-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Open daily - hours on request</div>
+</div>
+<div>
+<h4>Contact</h4>
+<div class="f-item"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(713) 485-6313</div>
+<div class="f-item">Email here</div>
+</div>
+</div>
+<div class="copy"><span>&copy; 2026 La Rosita Y Taqueria. All rights reserved.</span><span>Demo site created as a free preview</span></div>
+</div></footer>
+<a class="wa" href="https://wa.me/17134856313?text=Hi%20La%20Rosita%20Y%20Taqueria%21%20I%20saw%20your%20website%20and%20I%27d%20like%20to%20know%20more." target="_blank" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor"><path d="M19.11 17.205c-.372 0-1.59 1.36-1.917 1.36-.365 0-1.36-1.36-1.36-1.724 0-.219.867-1.05 1.32-1.53.083-.086.055-.16-.172-1.14-.286-1.235-.5-2.29-.5-2.29s3.375-.078 4.653-.078c1.54 0 1.19 1.28 1.19 1.28l-1.55 3.39s-.29.53-1.11.53zm9.77 4.753c.51-2.45.59-8.94-2.72-13.75C24.35 6.5 21.34 5.33 18.5 5.33c-2.83 0-5.85 1.17-7.66 2.87-3.3 4.81-3.23 11.3-2.72 13.75.52 2.45 2.4 4.55 4.13 4.55h12.5c1.73 0 3.61-2.1 4.13-4.55zM16.05 1.5c1.05-.34 2.87-1.13 4.68-1.13 1.8 0 3.62.79 4.67 1.13 3.44 1.12 6.66 5.33 6.66 9.38 0 4.06-3.22 8.27-6.66 9.38-1.05.34-2.87 1.13-4.67 1.13-1.81 0-3.63-.79-4.68-1.13C7.54 19.15 4.32 14.94 4.32 10.88c0-4.05 3.22-8.26 6.66-9.38z"/></svg></a>
+<script>
+function handleForm(e){e.preventDefault();var f=e.target;var q='Hi La Rosita Y Taqueria! I saw your website. My name is '+f.querySelector('input').value+' - '+f.querySelector('textarea').value;window.open('https://wa.me/17134856313?text='+encodeURIComponent(q),'_blank');
+}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(ev){var t=document.querySelector(a.getAttribute('href'));if(t){ev.preventDefault();t.scrollIntoView({behavior:'smooth'});}})});
+</script>
+</body>
+</html>
